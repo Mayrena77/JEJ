@@ -1,4 +1,4 @@
 #Jej
 Jessica Romero
-John Sosa
+John Sosa (IS A BEAST)
 Emma Landry
