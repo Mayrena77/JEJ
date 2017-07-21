@@ -1,4 +1,4 @@
 #Jej
-Jessica Romero
-John Sosa
-Emma Landry
+Jessica Romero :)
+John Sosa :)
+Emma Landry :)
