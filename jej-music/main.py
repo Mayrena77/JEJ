@@ -4,8 +4,8 @@ import os
 from google.appengine.ext import ndb
 from google.appengine.api import users
 
-    jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+jinja_environment = jinja2.Environment(
+loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -22,7 +22,6 @@ class ResultsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/results.html')
         self.response.out.write(template.render())
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
