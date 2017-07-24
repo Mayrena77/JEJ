@@ -9,6 +9,10 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /JEJ_logo_words\.jpg
+  static_files: JEJ_logo_words.jpg
+  upload: JEJ_logo_words\.jpg
+
 - url: .*
   script: main.app
 
