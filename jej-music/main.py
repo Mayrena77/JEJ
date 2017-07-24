@@ -8,13 +8,18 @@ from google.appengine.ext import ndb
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+        template = jinja_environment.get_template('templates/homepage.html')
+        self.response.out.write(template.render())
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
+        template = jinja_environment.get_template('templates/input.html')
+        self.response.out.write(template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
-
+        template = jinja_environment.get_template('templates/results.html')
+        self.response.out.write(template.render())
 
 
 app = webapp2.WSGIApplication([
