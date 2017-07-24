@@ -21,7 +21,6 @@ class ResultsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/results.html')
         self.response.out.write(template.render())
 
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/input', InputHandler),
