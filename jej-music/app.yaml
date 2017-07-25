@@ -5,9 +5,9 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+- url: /JEJ_Icon\.ico
+  static_files: JEJ_Icon.ico
+  upload: JEJ_Icon\.ico
 
 - url: /JEJ_logo_words\.jpg
   static_files: JEJ_logo_words.jpg
