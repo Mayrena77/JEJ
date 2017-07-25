@@ -17,6 +17,7 @@ class MainHandler(webapp2.RequestHandler):
       <link rel="stylesheet" href="resources/logincss.css">
        <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head> ''')
     #template = jinja_environment.get_template('templates/homepage.html')
+    template = jinja_environment.get_template('templates/About_Us.html')
     user = users.get_current_user()
 
     if user:
