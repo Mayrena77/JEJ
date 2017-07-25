@@ -14,6 +14,8 @@ class CssiUser(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
+    template=jinja_environment.get_template('homepage.html')
+    self.response.write(template.render())
     user = users.get_current_user()
     # If the user is logged in...
     if user:
