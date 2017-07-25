@@ -38,7 +38,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
   def post(self):
-    template = jinja_environment.get_template('templates/input.html')
+    template = jinja_environment.get_template('templates/results.html')
     user = users.get_current_user()
     if not user:
       self.error(500)
@@ -53,7 +53,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/input.html')
+        template = jinja_environment.get_template('templates/About_Us.html')
         self.response.out.write(template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
@@ -68,7 +68,6 @@ class AboutUsHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-
     ('/input', InputHandler),
     ('/results', ResultsHandler),
     ('/about', AboutUsHandler)
