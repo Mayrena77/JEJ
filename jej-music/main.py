@@ -37,7 +37,11 @@ class MainHandler(webapp2.RequestHandler):
     else:
       self.response.write('''
         <a href="%s"> <img id= "loginImage" src = "JEJ_logo_words.jpg"/> </a>''' % (
+<<<<<<< HEAD
           users.create_login_url('/about')))
+=======
+          users.create_login_url('/')))
+>>>>>>> bc3640a24fbccf7b40a516c24e76695c11f29324
 
 
   def post(self):
