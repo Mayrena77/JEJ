@@ -14,6 +14,9 @@ handlers:
   static_files: JEJ_logo_words.jpg
   upload: JEJ_logo_words\.jpg
 
+- url: /resources
+  static_dir: resources
+
 - url: .*
   script: main.app
 

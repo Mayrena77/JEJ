@@ -13,7 +13,7 @@ class CssiUser(ndb.Model):
 class MainHandler(webapp2.RequestHandler):
   def get(self):
     self.response.write(''' <head>
-      <link rel="stylesheet" href="/Users/demouser/JEJ/jej-music/resources/logincss.css"> </head> ''')
+      <link rel="stylesheet" href="resources/logincss.css"> </head> ''')
     template = jinja_environment.get_template('templates/homepage.html')
     user = users.get_current_user()
 
@@ -31,7 +31,7 @@ class MainHandler(webapp2.RequestHandler):
 
     else:
       self.response.write('''
-        <a href="%s"> <img src = "JEJ_logo_words.jpg"/> </a>''' % (
+        <a href="%s"> <img id= "loginImage" src = "JEJ_logo_words.jpg"/> </a>''' % (
           users.create_login_url('/home')))
 
 
