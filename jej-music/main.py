@@ -16,7 +16,7 @@ class MainHandler(webapp2.RequestHandler):
     self.response.write(''' <head>
       <link rel="stylesheet" href="/Users/demouser/JEJ/jej-music/resources/logincss.css">
        <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head> ''')
-    template = jinja_environment.get_template('templates/homepage.html')
+    template = jinja_environment.get_template('templates/input.html')
     user = users.get_current_user()
 
     if user:
@@ -34,11 +34,11 @@ class MainHandler(webapp2.RequestHandler):
     else:
       self.response.write('''
         <a href="%s"> <img src = "JEJ_logo_words.jpg"/> </a>''' % (
-          users.create_login_url('/home')))
+          users.create_login_url('/')))
 
 
   def post(self):
-    template = jinja_environment.get_template('templates/homepage.html')
+    template = jinja_environment.get_template('templates/input.html')
     user = users.get_current_user()
     if not user:
       self.error(500)
@@ -49,10 +49,7 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
 
-class HomepageHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/homepage.html')
-        self.response.out.write(template.render())
+
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
@@ -71,7 +68,7 @@ class AboutUsHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/home', HomepageHandler),
+
     ('/input', InputHandler),
     ('/results', ResultsHandler),
     ('/about', AboutUsHandler)
