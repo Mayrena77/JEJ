@@ -12,9 +12,11 @@ class CssiUser(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
+
     self.response.write(''' <head>
-      <link rel="stylesheet" href="resources/logincss.css"> </head> ''')
-    template = jinja_environment.get_template('templates/homepage.html')
+      <link rel="stylesheet" href="resources/logincss.css">
+       <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head> ''')
+    #template = jinja_environment.get_template('templates/homepage.html')
     user = users.get_current_user()
 
     if user:
@@ -62,9 +64,15 @@ class ResultsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/results.html')
         self.response.out.write(template.render())
 
+class AboutUsHandler(webapp2.RequestHandler):
+        def get(self):
+            template = jinja_environment.get_template('templates/About_Us.html')
+            self.response.out.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/home', HomepageHandler),
     ('/input', InputHandler),
-    ('/results', ResultsHandler)
+    ('/results', ResultsHandler),
+    ('/about', AboutUsHandler)
 ], debug=True)
