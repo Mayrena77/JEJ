@@ -34,7 +34,7 @@ class MainHandler(webapp2.RequestHandler):
     else:
       self.response.write('''
         <a href="%s"> <img id= "loginImage" src = "JEJ_logo_words.jpg"/> </a>''' % (
-          users.create_login_url('/home')))
+          users.create_login_url('/')))
 
 
   def post(self):
@@ -52,7 +52,7 @@ class MainHandler(webapp2.RequestHandler):
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('templates/About_Us.html')
+        template = jinja_environment.get_template('templates/input.html')
         self.response.out.write(template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
