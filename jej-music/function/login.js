@@ -1,2 +1,2 @@
-$(img).hide();
-$(img).fadeIn(1000);
+$('.loginImage').hide();
+$('.loginImage').fadeIn(3000);
