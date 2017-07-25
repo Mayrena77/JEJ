@@ -34,7 +34,7 @@ class MainHandler(webapp2.RequestHandler):
       # If the user hasn't been to our site, we ask them to sign up
       else:
         self.response.write('''
-            Welcome to our site, %s!  Please sign up! <br>
+            Welcome to our site, %s!  <br>
             <form method="post" action="/">
             <input type="text" name="first_name">
             <input type="text" name="last_name">
