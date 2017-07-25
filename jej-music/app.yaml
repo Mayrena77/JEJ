@@ -6,6 +6,9 @@ threadsafe: yes
 
 handlers:
 
+- url: /JEJ_logo_icon\.ico
+  static_files: JEJ_logo_icon.ico
+  upload: JEJ_logo_icon\.ico
 
 - url: /JEJ_logo_words\.jpg
   static_files: JEJ_logo_words.jpg
