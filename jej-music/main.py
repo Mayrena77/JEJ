@@ -61,9 +61,9 @@ class ResultsHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 class AboutUsHandler(webapp2.RequestHandler):
-        def get(self):
-            template = jinja_environment.get_template('templates/About_Us.html')
-            self.response.out.write(template.render())
+    def get(self):
+        template = jinja_environment.get_template('templates/About_Us.html')
+        self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
