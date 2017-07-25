@@ -12,8 +12,10 @@ class CssiUser(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
+
     self.response.write(''' <head>
-      <link rel="stylesheet" href="/Users/demouser/JEJ/jej-music/resources/logincss.css"> </head> ''')
+      <link rel="stylesheet" href="/Users/demouser/JEJ/jej-music/resources/logincss.css">
+       <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head> ''')
     template = jinja_environment.get_template('templates/homepage.html')
     user = users.get_current_user()
 
