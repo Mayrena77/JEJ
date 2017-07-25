@@ -14,9 +14,12 @@ class MainHandler(webapp2.RequestHandler):
   def get(self):
 
     self.response.write(''' <head>
-      <link rel="stylesheet" href="resources/logincss.css">
-       <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head> ''')
-    #template = jinja_environment.get_template('templates/homepage.html')
+    <link rel="stylesheet" href="resources/logincss.css">
+    <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head>
+    <title> JEJ </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="function/login.js"></script>''')
+    template = jinja_environment.get_template('templates/About_Us.html')
     user = users.get_current_user()
 
     if user:
@@ -34,7 +37,7 @@ class MainHandler(webapp2.RequestHandler):
     else:
       self.response.write('''
         <a href="%s"> <img id= "loginImage" src = "JEJ_logo_words.jpg"/> </a>''' % (
-          users.create_login_url('/home')))
+          users.create_login_url('/about')))
 
 
   def post(self):
