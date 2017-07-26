@@ -41,11 +41,10 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="function/login.js"></script>''' % (
-<<<<<<< HEAD
-          users.create_login_url('/InputHandler')))
-=======
+
+
           users.create_login_url('/')))
->>>>>>> b0d2b7a643bf0e7470cfd674bdd43c1645c9be85
+
 
 
   def post(self):
