@@ -38,11 +38,11 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="function/login.js"></script>''' % (
-          users.create_login_url('/about')))
+          users.create_login_url('/InputHandler')))
 
 
   def post(self):
-    template = jinja_environment.get_template('templates/About_Us.html')
+    template = jinja_environment.get_template('templates/input.html')
     user = users.get_current_user()
     if not user:
       self.error(500)
