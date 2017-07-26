@@ -1,0 +1,16 @@
+h1 {
+  font-family: 'Lobster', cursive;
+  position: fixed;
+  width: 97%;
+  border: 10px solid #5ea6c5;
+  background-color: #5ea6c5;
+}
+
+div {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+
+body {
+    background: linear-gradient(#b0d4e3, #74b4cd)
+}
