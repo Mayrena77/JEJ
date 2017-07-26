@@ -4,13 +4,25 @@ h1 {
   width: 97%;
   border: 10px solid #5ea6c5;
   background-color: #5ea6c5;
+  margin-top: 12px;
+}
+h2 {
+  font-family: 'Lobster', cursive;
 }
 
 div {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
+  position:absolute;
+  text-align: center;
+  top: 12%;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  overflow-y:scroll;
 }
 
 body {
-    background: linear-gradient(#b0d4e3, #74b4cd)
+    background: linear-gradient(#b0d4e3, #74b4cd);
+    background-attachment: fixed;
 }
