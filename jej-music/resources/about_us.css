@@ -1,4 +1,10 @@
-h1 {
+.logo {
+  margin-left: 1060px;
+  height: 35px;
+  width: 35px;
+}
+
+.scroll_bar {
   font-family: 'Lobster', cursive;
   position: fixed;
   width: 97%;
@@ -6,6 +12,8 @@ h1 {
   background-color: #5ea6c5;
   margin-top: 12px;
 }
+
+
 h2 {
   font-family: 'Lobster', cursive;
 }
@@ -13,6 +21,7 @@ h2 {
 div {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
+  font-size: 15pt;
   position:absolute;
   text-align: center;
   top: 12%;
