@@ -17,6 +17,9 @@ handlers:
 - url: /resources
   static_dir: resources
 
+- url: /function
+  static_dir: function
+
 - url: .*
   script: main.app
 
