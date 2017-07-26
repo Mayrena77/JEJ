@@ -62,10 +62,20 @@ class InputHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/input.html')
         self.response.out.write(template.render())
 
+
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/results.html')
         self.response.out.write(template.render())
+        self.response.write(template.render( { 'genre': self.request.get('genre'),
+        'Name of Artist': self.request.get('artist'),
+        'Name of Song': self.request.get('song')}))
+        user_Input = CssiUser(
+        genre = self.request.get('genre'),
+        song = self.request.get('song'),
+        artist = self.request.get('artist')
+        )
+        user_Input.put()
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
