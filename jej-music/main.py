@@ -81,15 +81,7 @@ class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/About_Us.html')
         self.response.out.write(template.render())
-        self.response.write(template.render( { 'genre': self.request.get('genre'),
-        'Name of Artist': self.request.get('artist'),
-        'Name of Song': self.request.get('song')}))
-        user_Input = CssiUser(
-        genre = self.request.get('genre'),
-        song = self.request.get('song'),
-        artist = self.request.get('artist')
-        )
-        user_Input.put()
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
