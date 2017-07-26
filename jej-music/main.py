@@ -41,7 +41,7 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="function/login.js"></script>''' % (
-          users.create_login_url('/about')))
+          users.create_login_url('/')))
 
 
   def post(self):
@@ -71,15 +71,15 @@ class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/About_Us.html')
         self.response.out.write(template.render())
-        # self.response.write(template.render( { 'genre': self.request.get('genre'),
-        # 'Name of Artist': self.request.get('artist'),
-        # 'Name of Song': self.request.get('song')}))
-        # user_Input = CssiUser(
-        # genre = self.request.get('genre'),
-        # song = self.request.get('song'),
-        # artist = self.request.get('artist')
-        # )
-        # user_Input.put()
+        self.response.write(template.render( { 'genre': self.request.get('genre'),
+        'Name of Artist': self.request.get('artist'),
+        'Name of Song': self.request.get('song')}))
+        user_Input = CssiUser(
+        genre = self.request.get('genre'),
+        song = self.request.get('song'),
+        artist = self.request.get('artist')
+        )
+        user_Input.put()
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
