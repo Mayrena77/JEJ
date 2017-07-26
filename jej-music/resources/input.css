@@ -22,12 +22,12 @@ body {
 .input {
   font-family: 'Lobster', cursive;
   font-size: 20pt;
-  margin-top: 200px;
+  margin-top: 150px;
   text-align: center;
 
 }
 
-input[type =text]{
+input[type =text], select{
   font-family: 'Amatic SC', cursive;
   font-size: 24pt;
   font-weight: bold;
@@ -37,8 +37,7 @@ input[type =text]{
   border-radius: 15px;
   border: none;
   outline: none;
-  box-shadow:rgba(199, 214, 224, 0.73) 0px 0px 24px;
-  background-color: rgba(199, 214, 224, 0.74);
+  background-color: rgba(168, 221, 245, 0.82);
     background-image: url('/resources/song_icon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -55,9 +54,4 @@ input[type=submit]{
   /*text-decoration: none;*/
   margin: 4px 2px;
   font-size: 24pt;
-}
-
-.dropdown {
-  border: none;
-
 }

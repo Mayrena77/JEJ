@@ -60,15 +60,6 @@ class MainHandler(webapp2.RequestHandler):
     self.response.write('Thanks for signing up!')
 
 
-<<<<<<< HEAD
-=======
-class InputHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/input.html')
-        self.response.out.write(template.render())
-
-
->>>>>>> 0adf9fcbd11be4103c8ec1d545e2e3fb6e3eb5e8
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/results.html')
