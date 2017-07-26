@@ -41,7 +41,10 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="function/login.js"></script>''' % (
+
+
           users.create_login_url('/')))
+
 
 
   def post(self):
@@ -57,14 +60,18 @@ class MainHandler(webapp2.RequestHandler):
     self.response.write('Thanks for signing up!')
 
 
+<<<<<<< HEAD
+=======
+class InputHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/input.html')
+        self.response.out.write(template.render())
+
+
+>>>>>>> 0adf9fcbd11be4103c8ec1d545e2e3fb6e3eb5e8
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/results.html')
-        self.response.out.write(template.render())
-
-class AboutUsHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('templates/About_Us.html')
         self.response.out.write(template.render())
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
@@ -75,6 +82,12 @@ class AboutUsHandler(webapp2.RequestHandler):
         artist = self.request.get('artist')
         )
         user_Input.put()
+
+class AboutUsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/About_Us.html')
+        self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
