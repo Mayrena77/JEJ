@@ -11,5 +11,53 @@
   width: 97%;
   border: 10px solid #5ea6c5;
   background-color: #5ea6c5;
-  margin-top: 12px;
+  margin-top: -9px;
+}
+
+body {
+    background: linear-gradient(#b0d4e3, #74b4cd);
+    background-attachment: fixed;
+}
+
+.input {
+  font-family: 'Lobster', cursive;
+  font-size: 20pt;
+  margin-top: 200px;
+  text-align: center;
+
+}
+
+input[type =text]{
+  font-family: 'Amatic SC', cursive;
+  font-size: 24pt;
+  font-weight: bold;
+  width: 60%;
+  height: 50px;
+  margin: 12px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  box-shadow:rgba(199, 214, 224, 0.73) 0px 0px 24px;
+  background-color: rgba(199, 214, 224, 0.74);
+    background-image: url('/resources/song_icon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+input[type=submit]{
+  background-color: #b4eaf9;
+  border-radius: 15px;
+  font-family: 'Amatic SC', cursive;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  /*text-decoration: none;*/
+  margin: 4px 2px;
+  font-size: 24pt;
+}
+
+.dropdown {
+  border: none;
+
 }

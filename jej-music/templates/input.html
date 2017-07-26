@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-
-<head> <title> JEJ Music - Input </title>
+<html>
+<head> <title> JEJ Music </title>
   <link rel="stylesheet" href="/resources/input.css">
   <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Lobster');
+  </style>
  </head>
+
+ <body>
+   <h1 class='scroll_bar'> JEJ Music
+     <img class='logo' src="/JEJ_logo_icon.ico" />
+  </h1>
+<div class="input">
 <form action="/results" method="get">
+  <br>
+  Name of Artist
+  <input type ="text" name="artist">
+  <br>
+  Name of Song
+  <input type ="text" name="song">
+  <br>
   Genre
+  <div class='dropdown'>
   <select name="genre">
     <option value="classical"> Classical </option>
     <option value="rock"> Rock </option>
@@ -16,12 +33,10 @@
     <option value="country"> Country </option>
     <option value="other"> Other </option>
   </select>
-  <br>
-  Name of Artist
-  <input type ="text" name="artist">
-  <br>
-  Name of Song
-  <input type ="text" name="song">
-  <br>
+</div>
+<br>
   <input type="submit" name="Next Page">
+</div>
 </form>
+</body>
+</html>
