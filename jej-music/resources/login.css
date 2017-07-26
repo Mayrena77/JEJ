@@ -1,3 +1,12 @@
+.greeting {
+  margin-left: -1200px;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.signout {
+  margin-top: -60px;
+}
 
 img {
   display: block;
