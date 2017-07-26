@@ -1,7 +1,8 @@
 .logo {
-  margin-left: 1060px;
+  margin-left: 97%;
   height: 35px;
   width: 35px;
+  margin-top: -40px;
 }
 
 .scroll_bar {
@@ -22,7 +23,7 @@ div {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
   font-size: 15pt;
-  position:absolute;
+  position: absolute;
   text-align: center;
   top: 12%;
   left:0px;

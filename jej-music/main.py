@@ -19,17 +19,17 @@ class MainHandler(webapp2.RequestHandler):
     self.response.write(''' <head>
     <link rel="stylesheet" href="resources/login.css">
     <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head>
-    <title> JEJ </title> <body>''')
+    <title> JEJ Music </title> <body>''')
     template = jinja_environment.get_template('templates/About_Us.html')
     user = users.get_current_user()
 
     if user:
       email_address = user.nickname()
       cssi_user = CssiUser.get_by_id(user.user_id())
-      signout_link_html = '<a href="%s">sign out</a>' % (
+      signout_link_html = '<div class="signout"> <a href="%s">sign out</a> </div>' % (
           users.create_logout_url('/'))
       self.response.write('''
-            Welcome %s! <br> %s <br>''' % (
+            <div class="greeting"> Hello %s! <br> %s <br> </div>''' % (
               email_address,
               signout_link_html))
       self.response.out.write(template.render())
@@ -71,15 +71,15 @@ class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/About_Us.html')
         self.response.out.write(template.render())
-        self.response.write(template.render( { 'genre': self.request.get('genre'),
-        'Name of Artist': self.request.get('artist'),
-        'Name of Song': self.request.get('song')}))
-        user_Input = CssiUser(
-        genre = self.request.get('genre'),
-        song = self.request.get('song'),
-        artist = self.request.get('artist')
-        )
-        user_Input.put()
+        # self.response.write(template.render( { 'genre': self.request.get('genre'),
+        # 'Name of Artist': self.request.get('artist'),
+        # 'Name of Song': self.request.get('song')}))
+        # user_Input = CssiUser(
+        # genre = self.request.get('genre'),
+        # song = self.request.get('song'),
+        # artist = self.request.get('artist')
+        # )
+        # user_Input.put()
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
