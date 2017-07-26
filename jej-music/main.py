@@ -14,7 +14,7 @@ class MainHandler(webapp2.RequestHandler):
   def get(self):
 
     self.response.write(''' <head>
-    <link rel="stylesheet" href="resources/logincss.css">
+    <link rel="stylesheet" href="resources/login.css">
     <link rel="shortcut icon" href="/JEJ_logo_icon.ico" />  </head>
     <title> JEJ </title> <body>''')
     template = jinja_environment.get_template('templates/About_Us.html')
