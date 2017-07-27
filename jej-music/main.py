@@ -8,6 +8,7 @@ jinja_environment = jinja2.Environment(
 loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class CssiUser(ndb.Model):
+    
     genre = ndb.StringProperty()
     artist = ndb.StringProperty()
     song = ndb.StringProperty()
@@ -73,6 +74,12 @@ class ResultsHandler(webapp2.RequestHandler):
         artist = self.request.get('artist')
         )
         user_Input.put()
+
+        query = user_Input.query()
+        query = user_Input.genre
+        matches = query
+        template = jinja_environment.get_template('templates/results.html')
+        self.response.write(template.render({'match': matches}))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
