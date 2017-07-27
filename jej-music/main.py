@@ -70,6 +70,15 @@ class NameHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
 
+    def post(self):
+        user_Id = CssiUser(
+        first_name = self.request.get('first_name')
+        )
+        user_Id.put()
+        self.redirect('/')
+
+
+
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
@@ -90,11 +99,11 @@ class ResultsHandler(webapp2.RequestHandler):
         )
         user_Input.put()
 
-        # query = user_Input.query()
-        # query = user_Input.genre
-        # matches = query
-        # template = jinja_environment.get_template('templates/results.html')
-        # self.response.write(template.render({'match': matches}))
+        """query = user_Input.query()
+        query = user_Input.genre
+        matches = query
+        template = jinja_environment.get_template('templates/results.html')
+        self.response.write(template.render({'match': matches}))"""
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
