@@ -9,9 +9,16 @@
  </head>
 
  <body>
-   <h1 class='scroll_bar'> JEJ Music
+
+<div class='scroll_bar'> JEJ Music
+ <div class='links'>
+   <a id="Results" href="http://localhost:8080/results"> Matches </a>
+   <a id="About" href="http://localhost:8080/about">About us</a>
+   <a id="Input" href="http://localhost:8080/"> Input </a>
+ </div>
      <img class='logo' src="/JEJ_logo_icon.ico" />
-  </h1>
+  </div>
+
 <div class="input">
 <form action="/results" method="get">
   <br>
@@ -22,7 +29,6 @@
   <input type ="text" name="song">
   <br>
   Genre
-  <div class='dropdown'>
   <select name="genre">
     <option value="classical"> Classical </option>
     <option value="rock"> Rock </option>
@@ -33,10 +39,11 @@
     <option value="country"> Country </option>
     <option value="other"> Other </option>
   </select>
-</div>
 <br>
   <input type="submit" name="Next Page">
-</div>
 </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="function/login.js"></script>
 </body>
 </html>
