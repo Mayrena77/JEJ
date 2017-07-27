@@ -7,6 +7,7 @@ $('.input').fadeIn(2000);
 $('.content').hide();
 $('.content').fadeIn(2000);
 
+
 var size = 450;
 var s_size = 0.88 * size;
 var m_size = 0.99 * size;

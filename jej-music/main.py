@@ -14,7 +14,15 @@ class Song(ndb.Model):
     genre = ndb.StringProperty()
     artist = ndb.StringProperty()
     song_name = ndb.StringProperty()
+<<<<<<< HEAD
     user_key = ndb.KeyProperty(CssiUser)
+=======
+    CssiUser_key = ndb.KeyProperty(CssiUser)
+
+class CssiUser(ndb.Model):
+    first_name = ndb.StringProperty()
+    pass
+>>>>>>> 60c1e4c726b2a16b4bb0b10137e14dcfa2e5e5d1
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -60,10 +68,14 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
 
+
+
 class NameHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/name.html')
         self.response.write(template.render())
+
+
     def post(self):
         user = users.get_current_user()
         user_Id = CssiUser(
@@ -72,6 +84,7 @@ class NameHandler(webapp2.RequestHandler):
         )
         user_Id.put()
         self.redirect('/')
+
 
 
 
