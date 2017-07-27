@@ -85,7 +85,8 @@ body {
 img {
   display: inline-block;
   height: 350px;
-  width: 300px
+  width: 300px;
+  border-radius: 40%;
 }
 
 #microphone {
@@ -99,4 +100,5 @@ img {
   opacity: 0.5;
   height: 200px;
   width: 200px;
+  border-radius: 0px;
 }
