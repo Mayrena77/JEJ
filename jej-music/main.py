@@ -12,6 +12,7 @@ class Song(ndb.Model):
     genre = ndb.StringProperty()
     artist = ndb.StringProperty()
     song_name = ndb.StringProperty()
+    CssiUser_key = ndb.KeyProperty(CssiUser)
 
 class CssiUser(ndb.Model):
     first_name = ndb.StringProperty()
@@ -61,14 +62,12 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
 
+
+
 class NameHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/name.html')
-        self.response.write(template.render( { 'first_name': self.request.get('first_name')}))
-        user_Id = CssiUser(
-        first_name = self.request.get('first_name')
-        )
-        user_Id.put()
+        self.response.write(template.render())
 
 
 
@@ -91,11 +90,11 @@ class ResultsHandler(webapp2.RequestHandler):
         )
         user_Input.put()
 
-        query = user_Input.query()
-        query = user_Input.genre
-        matches = query
-        template = jinja_environment.get_template('templates/results.html')
-        self.response.write(template.render({'match': matches}))
+        # query = user_Input.query()
+        # query = user_Input.genre
+        # matches = query
+        # template = jinja_environment.get_template('templates/results.html')
+        # self.response.write(template.render({'match': matches}))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):

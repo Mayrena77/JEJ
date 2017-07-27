@@ -62,6 +62,14 @@ a {
   overflow-y:scroll;
 }
 
+p {
+  font-size: 20pt;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
 body {
     background: linear-gradient(#b0d4e3, #74b4cd);
     background-attachment: fixed;
