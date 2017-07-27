@@ -70,8 +70,6 @@ class NameHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 
-
-
 class InputHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/input.html')
