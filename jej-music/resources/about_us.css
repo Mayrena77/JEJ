@@ -19,3 +19,8 @@ body {
     background: linear-gradient(#b0d4e3, #74b4cd);
     background-attachment: fixed;
 }
+img {
+  display: flex;
+  height: 200px;
+  width: 300px;
+}
