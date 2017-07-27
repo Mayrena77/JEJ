@@ -7,6 +7,11 @@ from google.appengine.api import users
 jinja_environment = jinja2.Environment(
 loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
+
+class CssiUser(ndb.Model):
+    first_name = ndb.StringProperty()
+    CssiUser_key = CssiUser.put()
+
 class Song(ndb.Model):
 
     genre = ndb.StringProperty()
@@ -14,9 +19,6 @@ class Song(ndb.Model):
     song_name = ndb.StringProperty()
     CssiUser_key = ndb.KeyProperty(CssiUser)
 
-class CssiUser(ndb.Model):
-    first_name = ndb.StringProperty()
-    pass
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -76,8 +78,6 @@ class NameHandler(webapp2.RequestHandler):
         )
         user_Id.put()
         self.redirect('/')
-
-
 
 
 class InputHandler(webapp2.RequestHandler):
