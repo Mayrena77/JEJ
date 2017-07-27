@@ -1,5 +1,5 @@
 .logo {
-  margin-left: 97%;
+  margin-left: 40px;
   height: 35px;
   width: 35px;
   margin-top: -40px;
@@ -14,7 +14,7 @@
   border: 10px solid #5ea6c5;
   border-radius: 20px;
   background-color: #5ea6c5;
-  margin-top: 13px;
+  margin-top: 9px;
 }
 
 a {
@@ -49,12 +49,6 @@ a {
   margin-left: 24px;
   border-radius: 20px;
 }
-
-
-h2 {
-  font-family: 'Lobster', cursive;
-}
-
 .content {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
@@ -71,9 +65,4 @@ h2 {
 body {
     background: linear-gradient(#b0d4e3, #74b4cd);
     background-attachment: fixed;
-}
-img {
-  display: inline-block;
-  height: 350px;
-  width: 300px
 }
