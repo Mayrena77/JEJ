@@ -7,11 +7,14 @@ from google.appengine.api import users
 jinja_environment = jinja2.Environment(
 loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class CssiUser(ndb.Model):
-    
+class Song(ndb.Model):
+
     genre = ndb.StringProperty()
     artist = ndb.StringProperty()
-    song = ndb.StringProperty()
+    song_name = ndb.StringProperty()
+
+class CssiUser(ndb.Model):
+    name = ndb.StringProperty()
     pass
 
 class MainHandler(webapp2.RequestHandler):
@@ -60,6 +63,12 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
 
+class NameHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/name.html')
+        self.response.out.write(template.render())
+
+
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
@@ -67,11 +76,11 @@ class ResultsHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
-        'Name of Song': self.request.get('song')}))
-        user_Input = CssiUser(
+        'Name of Song': self.request.get('song_name')}))
+        user_Input = Song(
         genre = self.request.get('genre'),
-        song = self.request.get('song'),
-        artist = self.request.get('artist')
+        song_name = self.request.get('song_name'),
+        artist = self.request.get('artist'),
         )
         user_Input.put()
 
@@ -90,5 +99,6 @@ class AboutUsHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/results', ResultsHandler),
-    ('/about', AboutUsHandler)
+    ('/about', AboutUsHandler),
+    ('/name', NameHandler)
 ], debug=True)
