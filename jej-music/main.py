@@ -64,10 +64,9 @@ class MainHandler(webapp2.RequestHandler):
 class NameHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/name.html')
-        self.response.out.write(template.render())
         self.response.write(template.render( { 'first_name': self.request.get('first_name')}))
-        user_Id = name(
-        name = self.request.get('first_name')
+        user_Id = CssiUser(
+        first_name = self.request.get('first_name')
         )
         user_Id.put()
 
@@ -82,7 +81,6 @@ class InputHandler(webapp2.RequestHandler):
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/results.html')
-        self.response.out.write(template.render())
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
         'Name of Song': self.request.get('song_name')}))
