@@ -14,7 +14,7 @@ class Song(ndb.Model):
     song_name = ndb.StringProperty()
 
 class CssiUser(ndb.Model):
-    name = ndb.StringProperty()
+    first_name = ndb.StringProperty()
     pass
 
 class MainHandler(webapp2.RequestHandler):
@@ -46,10 +46,7 @@ class MainHandler(webapp2.RequestHandler):
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
         <script src="function/login.js"></script>''' % (
-
-
-          users.create_login_url('/')))
-
+          users.create_login_url('/name')))
 
 
   def post(self):
@@ -68,6 +65,12 @@ class NameHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/name.html')
         self.response.out.write(template.render())
+        self.response.write(template.render( { 'first_name': self.request.get('first_name')}))
+        user_Id = name(
+        name = self.request.get('first_name')
+        )
+        user_Id.put()
+
 
 
 class InputHandler(webapp2.RequestHandler):
