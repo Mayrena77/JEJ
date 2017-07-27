@@ -41,9 +41,10 @@ class MainHandler(webapp2.RequestHandler):
 
     else:
       self.response.write('''
-        <a href="%s"> <img class="loginImage" src = "JEJ_logo_words.jpg"/> </a>
+        <a href="%s"> <img class="loginImage" src = "JEJ_logo_icon.ico"/> </a>
+        <img class"words" src = "JEJ_words.jpg"/>
         </body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
         <script src="function/login.js"></script>''' % (
 
 
@@ -68,6 +69,13 @@ class NameHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/name.html')
         self.response.out.write(template.render())
 
+
+
+
+class InputHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/input.html')
+        self.response.out.write(template.render())
 
 
 class ResultsHandler(webapp2.RequestHandler):
