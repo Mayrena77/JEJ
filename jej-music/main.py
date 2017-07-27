@@ -37,7 +37,8 @@ class MainHandler(webapp2.RequestHandler):
 
     else:
       self.response.write('''
-        <a href="%s"> <img class="loginImage" src = "JEJ_logo_words.jpg"/> </a>
+        <a href="%s"> <img class="loginImage" src = "JEJ_logo_icon.ico"/> </a>
+        <img class"words" src = "JEJ_words.jpg"/>
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="function/login.js"></script>''' % (

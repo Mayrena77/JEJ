@@ -14,6 +14,10 @@ handlers:
   static_files: JEJ_logo_words.jpg
   upload: JEJ_logo_words\.jpg
 
+- url: /JEJ_words\.jpg
+  static_files: JEJ_words.jpg
+  upload: JEJ_words\.jpg
+
 - url: /resources
   static_dir: resources
 

@@ -8,11 +8,18 @@
   margin-top: -60px;
 }
 
-img {
+.words {
+  margin-left: 500px;
+}
+
+
+.loginImage {
   display: block;
   margin: auto;
   margin-top: 150px;
 }
+
+
 
 body {
   background: linear-gradient(#b0d4e3, #74b4cd)
