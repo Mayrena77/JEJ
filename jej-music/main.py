@@ -40,7 +40,7 @@ class MainHandler(webapp2.RequestHandler):
         <a href="%s"> <img class="loginImage" src = "JEJ_logo_icon.ico"/> </a>
         <img class"words" src = "JEJ_words.jpg"/>
         </body>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
         <script src="function/login.js"></script>''' % (
 
 
@@ -59,6 +59,13 @@ class MainHandler(webapp2.RequestHandler):
     cssi_user.put()
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
+
+
+
+class InputHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('templates/input.html')
+        self.response.out.write(template.render())
 
 
 class ResultsHandler(webapp2.RequestHandler):

@@ -2,13 +2,13 @@ h2 {
   font-family: 'Lobster', cursive;
 }
 
-.content {
+div {
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
   font-size: 15pt;
   position: absolute;
   text-align: center;
-  top: 17%;
+  top: 12%;
   left:0px;
   right:0px;
   bottom:0px;
@@ -19,55 +19,8 @@ body {
     background: linear-gradient(#b0d4e3, #74b4cd);
     background-attachment: fixed;
 }
-
-
-.logo {
-  margin-left: 40px;
-  height: 35px;
-  width: 35px;
-
-}
-
-.scroll_bar {
-  font-family: 'Lobster', cursive;
-  font-size: 25pt;
-  font-weight: bold;
-  position: fixed;
-  width: 97%;
-  border: 10px solid #5ea6c5;
-  border-radius: 20px;
-  background-color: #5ea6c5;
-  margin-top: 5px;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.links{
-  display: inline-block;
-  margin-left: 62%;
-  font-family: 'Amatic SC', cursive;
-  padding-bottom: 3px;
-}
-
-#About {
-  border: 3px solid #3086ab;
-  background-color: #3086ab;
-  margin-left: 24px;
-  border-radius: 20px;
-}
-
-#Results {
-  border: 3px solid #3a7b98;
-  background-color: #3a7b98;
-  margin-right: 9px;
-  border-radius: 20px;
-}
-
-#Input {
-  border: 3px solid #479abd;
-  background-color: #479abd;
-  margin-left: 24px;
-  border-radius: 20px;
+img {
+  display: flex;
+  height: 200px;
+  width: 300px
 }
