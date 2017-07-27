@@ -7,15 +7,14 @@ from google.appengine.api import users
 jinja_environment = jinja2.Environment(
 loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class Song(ndb.Model):
+class CssiUser(ndb.Model):
+    first_name = ndb.StringProperty()
 
+class Song(ndb.Model):
     genre = ndb.StringProperty()
     artist = ndb.StringProperty()
     song_name = ndb.StringProperty()
-
-class CssiUser(ndb.Model):
-    first_name = ndb.StringProperty()
-    pass
+    user_key = ndb.KeyProperty(CssiUser)
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -66,8 +65,10 @@ class NameHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('templates/name.html')
         self.response.write(template.render())
     def post(self):
+        user = users.get_current_user()
         user_Id = CssiUser(
-        first_name = self.request.get('first_name')
+        first_name = self.request.get('first_name'),
+        id = user.user_id()
         )
         user_Id.put()
         self.redirect('/')
@@ -82,6 +83,8 @@ class InputHandler(webapp2.RequestHandler):
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
+        user = users.get_current_user()
+        cssi_user = CssiUser.get_by_id(user.user_id())
         template = jinja_environment.get_template('templates/results.html')
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
@@ -90,6 +93,7 @@ class ResultsHandler(webapp2.RequestHandler):
         genre = self.request.get('genre'),
         song_name = self.request.get('song_name'),
         artist = self.request.get('artist'),
+        user_key = cssi_user.key
         )
         user_Input.put()
 
