@@ -20,7 +20,7 @@ body {
     background-attachment: fixed;
 }
 img {
-  display: flex;
-  height: 200px;
+  display: inline-block;
+  height: 350px;
   width: 300px
 }
