@@ -93,7 +93,7 @@ class ResultsHandler(webapp2.RequestHandler):
         genre = self.request.get('genre'),
         song_name = self.request.get('song_name'),
         artist = self.request.get('artist'),
-        user_key = cssi_user.key2
+        user_key = cssi_user.key
         )
         user_Input.put()
 
