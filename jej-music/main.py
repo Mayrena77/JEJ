@@ -15,6 +15,12 @@ class Song(ndb.Model):
     artist = ndb.StringProperty()
     song_name = ndb.StringProperty()
     user_key = ndb.KeyProperty(CssiUser)
+<<<<<<< HEAD
+=======
+
+class CssiUser(ndb.Model):
+    first_name = ndb.StringProperty()
+>>>>>>> 3ab7cbd0e251e0ee888dda173d12704a9c9b715a
 
 class MainHandler(webapp2.RequestHandler):
   def get(self):
@@ -74,7 +80,10 @@ class NameHandler(webapp2.RequestHandler):
         self.redirect('/')
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ab7cbd0e251e0ee888dda173d12704a9c9b715a
 class InputHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/input.html')
@@ -86,6 +95,16 @@ class ResultsHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         cssi_user = CssiUser.get_by_id(user.user_id())
         template = jinja_environment.get_template('templates/results.html')
+
+        songs = Song.query().fetch()
+
+        for s in songs
+              if user == cssi_user
+                   continue
+              if user.genre == cssi_user.genre
+                   print user
+
+
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
         'Name of Song': self.request.get('song_name')}))
@@ -97,11 +116,6 @@ class ResultsHandler(webapp2.RequestHandler):
         )
         user_Input.put()
 
-        """query = user_Input.query()
-        query = user_Input.genre
-        matches = query
-        template = jinja_environment.get_template('templates/results.html')
-        self.response.write(template.render({'match': matches}))"""
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
