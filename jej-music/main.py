@@ -44,7 +44,7 @@ class MainHandler(webapp2.RequestHandler):
     else:
       self.response.write('''
         <a href="%s"> <img class="loginImage" src = "JEJ_logo_icon.ico"/> </a>
-        <img class"words" src = "JEJ_words.jpg"/>
+        <img class="words" src = "JEJ_words.jpg"/>
         </body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
         <script src="function/login.js"></script>''' % (
@@ -93,13 +93,14 @@ class ResultsHandler(webapp2.RequestHandler):
         cssi_user = CssiUser.get_by_id(user.user_id())
         template = jinja_environment.get_template('templates/results.html')
 
-        songs = Song.query().fetch()
-
-        for s in songs
-              if user == cssi_user
-                   continue
-              if user.genre == cssi_user.genre
-                   print user
+        # songs = Song.query().fetch()
+        #
+        #
+        # for s in songs
+        #       if user == cssi_user
+        #            continue
+        #       if user.genre == cssi_user.genre
+        #            print user
 
 
         self.response.write(template.render( { 'genre': self.request.get('genre'),

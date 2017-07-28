@@ -9,7 +9,9 @@
 }
 
 .words {
-  margin-left: 500px;
+  margin-left: 465px;
+  position: fixed;
+  top: 475px;
 }
 
 
