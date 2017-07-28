@@ -63,14 +63,10 @@ class MainHandler(webapp2.RequestHandler):
     self.response.out.write(template.render())
     self.response.write('Thanks for signing up!')
 
-
-
 class NameHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('templates/name.html')
         self.response.write(template.render())
-
-
     def post(self):
         user = users.get_current_user()
         user_Id = CssiUser(
@@ -79,7 +75,6 @@ class NameHandler(webapp2.RequestHandler):
         )
         user_Id.put()
         self.redirect('/')
-
 
 class InputHandler(webapp2.RequestHandler):
     def get(self):
@@ -93,19 +88,23 @@ class ResultsHandler(webapp2.RequestHandler):
         cssi_user = CssiUser.get_by_id(user.user_id())
         template = jinja_environment.get_template('templates/results.html')
 
-        # songs = Song.query().fetch()
-        #
-        #
-        # for s in songs
-        #       if user == cssi_user
-        #            continue
-        #       if user.genre == cssi_user.genre
-        #            print user
+        """song_info = Song.query().fetch()
+        song_genre = song_info.get
+        genre_list = []
+        genre_list = genre_list.append(song_genre)"""
 
+        """for g in song_genres:
+
+              if user == cssi_user:
+                   continue
+              if user.genre == cssi_user.genre:
+                   print user
+"""
 
         self.response.write(template.render( { 'genre': self.request.get('genre'),
         'Name of Artist': self.request.get('artist'),
-        'Name of Song': self.request.get('song_name')}))
+        'Name of Song': self.request.get('song_name'),
+        'first_name': self.request.get('first_name')}))
         user_Input = Song(
         genre = self.request.get('genre'),
         song_name = self.request.get('song_name'),
